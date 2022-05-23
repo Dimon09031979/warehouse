@@ -1,12 +1,12 @@
 import {observer} from 'mobx-react-lite';
-import Products from './State';
+import products from './State';
 import Product from './Components/Product';
 import NewProduct from './Components/NewProduct';
 import InTotal from './Components/InTotal';
 
 
 const App = observer(() => {
-	const rows = Products.map(
+	const rows = products.list.map(
 			(product, i) => <Product index ={i} />
 	);
 	return <div>

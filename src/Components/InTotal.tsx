@@ -1,12 +1,12 @@
 import {observer} from 'mobx-react-lite';
-import Products from '../State';
+import products from '../State';
 
 const InTotal: React.FunctionComponent = observer(() => {
 	let sum: number = 0;
-	Products.forEach(
+	products.list.forEach(
 		(product) => {
-			if (product.check) {
-				sum += Number(product.sum);
+			if (product.data.check) {
+				sum += Number(product.data.sum);
 			}
 		}
 	);

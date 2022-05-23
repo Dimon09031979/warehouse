@@ -1,24 +1,25 @@
 import {ReactNode} from 'react';
 import {observer} from 'mobx-react-lite';
-import Products from '../State';
+import products from '../State';
+
 
 const Product: React.FunctionComponent<{index: number}> = observer((props) => {
 	const i = props.index;
 	
-	const buttonDel: ReactNode = <button onClick={() => Products.splice(i, 1)} >
+	const buttonDel: ReactNode = <button onClick={() => products.list.splice(i, 1)} >
 						Удалить
 					 </button>;
 	const checkbox: ReactNode = <input 
 						type='checkbox'
-						checked={Products[i].check}
-						onChange={() => Products[i].check = !Products[i].check}
+						checked={products.list[i].data.check}
+						onChange={() => products.list[i].changeCheck() }
    	/>;
 
 	return <tr>
-		<td>{Products[i].name}</td>
-		<td style={{textAlign: 'center'}}>{Products[i].number}</td>
-		<td style={{textAlign: 'center'}}>{Products[i].price}</td>
-		<td style={{textAlign: 'center'}}>{Products[i].sum}</td>
+		<td>{products.list[i].data.name}</td>
+		<td style={{textAlign: 'center'}}>{products.list[i].data.number}</td>
+		<td style={{textAlign: 'center'}}>{products.list[i].data.price}</td>
+		<td style={{textAlign: 'center'}}>{products.list[i].data.sum}</td>
 		<td>{buttonDel}</td>
 		<td>{checkbox}</td>
 	</tr>
