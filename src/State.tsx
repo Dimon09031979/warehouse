@@ -25,6 +25,6 @@ class ProductsClass {
 	}
 }
 
-const products = new ProductsClass;
+const products = new ProductsClass();
 
 export default products;
