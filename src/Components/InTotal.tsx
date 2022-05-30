@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react-lite';
-import products from '../State';
+import products from '../model/State';
 
 const InTotal: React.FunctionComponent = observer(() => {
 	let sum: number = 0;

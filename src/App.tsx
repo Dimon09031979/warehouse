@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {observer} from 'mobx-react-lite';
+import products from './model/State';
+import Product from './Components/Product';
+import NewProduct from './Components/NewProduct';
+import InTotal from './Components/InTotal';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = observer(() => {
+	const rows = products.list.map(
+			(product, i) => <Product index ={i} />
+	);
+	return <div>
+            <h3>Список продуктов:</h3>
+			<table>
+				<tr>
+					<th>&#160; Наименование &#160;</th>
+					<th>&#160; Количество кг &#160;</th>
+					<th>&#160; Цена руб &#160;</th>
+					<th>&#160; Стоимость руб &#160;</th>
+				</tr>
+				{rows}
+			</table>
+			<NewProduct />
+			<InTotal />
+        </div>;
+});
 
 export default App;

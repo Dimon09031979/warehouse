@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import {observer} from 'mobx-react-lite';
-import products from '../State';
+import products from '../model/State';
 import EnterValue from './EnterValue';
-import Product from '../classProduct';
+import Product from '../model/classProduct';
 
 const NewProduct: React.FunctionComponent = observer(() => {
 	const [reset, setReset] = useState(true);

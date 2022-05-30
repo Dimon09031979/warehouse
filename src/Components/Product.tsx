@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 import {observer} from 'mobx-react-lite';
-import products from '../State';
+import products from '../model/State';
 
 
 const Product: React.FunctionComponent<{index: number}> = observer((props) => {
