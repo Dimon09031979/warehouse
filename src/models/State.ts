@@ -1,16 +1,26 @@
-import {observable, makeObservable} from 'mobx';
+import {observable, makeObservable, computed} from 'mobx';
 import type {ProductType} from './types';
 import Product from './classProduct';
 
 class ProductsClass {
+	@observable
 	list: Product[] = [];
 
-	constructor() {
-		makeObservable(this, {
-			list: observable
+	@computed
+	get sum() {
+		let sum = 0;
+		this.list.forEach( product => {
+			if (product.data.check) {
+				sum += Number(product.data.sum);
+			}
 		});
+		return sum;
+	};
+
+	constructor() {
+		makeObservable(this);
 		const productList: ProductType[] = [
-			{name: 'Яблоки', price: 23, number: 25, sum: 45,},
+			{name: 'Яблоки', price: 23, number: 25,},
 			{name: 'Картошка', price: 12, number: 230,},
 			{name: 'Мясо', price: 120, number: 15,},
 			{name: 'Помидоры', price: 55, number: 12,},
@@ -18,10 +28,10 @@ class ProductsClass {
 		productList.forEach(
 			(product) => {
 				product.sum = product.price * product.number;
-				product.check = true
+				product.check = true;
 		});
 
-		this.list = productList.map( prod => new Product(prod));
+		this.list = productList.map( prod => new Product(prod) );
 	}
 }
 

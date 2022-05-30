@@ -13,6 +13,7 @@ class Product {
 	get data() {
 		return this._product
 	};
+	
 	changeCheck() {
 		this._product.check = !this._product.check;
 	};
