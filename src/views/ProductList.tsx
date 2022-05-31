@@ -2,10 +2,11 @@ import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 import Product from './Product';
 
-const ProductList = observer(() => {
-    const rows = products.list.map(
-        (product, i) => <Product index ={i} />
-    );
+const ProductList: React.FunctionComponent = observer(() => {
+    const rows: JSX.Element[] = [];
+	for (let i=0; i < products.list.length; i++){
+		rows.push(<Product index ={i} />);
+	};
 
     return <div>
         <h3>Список продуктов:</h3>

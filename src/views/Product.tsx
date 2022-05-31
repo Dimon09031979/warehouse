@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactElement} from 'react';
 import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 
@@ -6,14 +6,15 @@ import products from '../models/State';
 const Product: React.FunctionComponent<{index: number}> = observer((props) => {
 	const i = props.index;
 	
-	const buttonDel: ReactNode = <button onClick={() => products.list.splice(i, 1)} >
-						Удалить
-					 </button>;
-	const checkbox: ReactNode = <input 
-						type='checkbox'
-						checked={products.list[i].data.check}
-						onChange={() => products.list[i].changeCheck() }
-   	/>;
+	const buttonDel: ReactElement = <button onClick={() => products.list.splice(i, 1)} >
+									Удалить
+								 </button>;
+
+	const checkbox: ReactElement = <input 
+									type='checkbox'
+									checked={products.list[i].data.check}
+									onChange={() => products.list[i].changeCheck() }
+   								/>;
 
 	return <tr>
 		<td>{products.list[i].data.name}</td>

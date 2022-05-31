@@ -2,7 +2,7 @@ import ProductList from './ProductList';
 import NewProduct from './NewProduct';
 import InTotal from './InTotal';
 
-const App = () => {
+const App: React.FunctionComponent = () => {
 	return <div>
             <ProductList />
 			<NewProduct />
