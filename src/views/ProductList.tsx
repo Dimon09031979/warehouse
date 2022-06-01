@@ -1,6 +1,7 @@
 import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 import Product from './Product';
+import Table from '@mui/material/Table';
 
 const ProductList: React.FunctionComponent = observer(() => {
     const rows: JSX.Element[] = [];
@@ -10,7 +11,7 @@ const ProductList: React.FunctionComponent = observer(() => {
 
     return <div>
         <h3>Список продуктов:</h3>
-			<table>
+			<Table>
 				<tr>
 					<th>&#160; Наименование &#160;</th>
 					<th>&#160; Количество кг &#160;</th>
@@ -18,7 +19,7 @@ const ProductList: React.FunctionComponent = observer(() => {
 					<th>&#160; Стоимость руб &#160;</th>
 				</tr>
 				{rows}
-			</table>
+			</Table>
     </div>
 });
 

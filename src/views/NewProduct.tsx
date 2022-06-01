@@ -4,6 +4,7 @@ import products from '../models/State';
 import EnterValue from './EnterValue';
 import Product from '../models/classProduct';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 const NewProduct: React.FunctionComponent = observer(() => {
 	const [reset, setReset] = useState(true);
@@ -23,20 +24,27 @@ const NewProduct: React.FunctionComponent = observer(() => {
 		products.list.push(newproduct);
 	}
 
-	return <div>
-			<h4>Добавить новый продукт:</h4>
+	return <Box
+				sx={{
+					border: '2px solid',
+					borderRadius: '15px',
+					padding: '20px',
+					display: 'inline-block'
+				}}
+			>
+			<h3 style={{margin: '0px'}}>Добавить новый продукт:</h3>
 			<EnterValue  
-						name={'Наименование:'}
+						name={'Наименование'}
 						changeValue={(value) => name = String(value)} 
 						reset={reset}
 			/>
 			<EnterValue  
-						name={'Количество:'}
+						name={'Количество'}
 						changeValue={(value) => number = Number(value)} 
 						reset={reset}
 			/>
 			<EnterValue  
-						name={'Цена:'}
+						name={'Цена'}
 						changeValue={(value) =>price = Number(value)} 
 						reset={reset}
 			/>
@@ -50,7 +58,7 @@ const NewProduct: React.FunctionComponent = observer(() => {
 			>
 				Добавить
 			</Button>
-		</div>
+		</Box>
 });
 
 export default NewProduct;
