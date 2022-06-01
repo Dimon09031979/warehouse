@@ -3,6 +3,7 @@ import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 import EnterValue from './EnterValue';
 import Product from '../models/classProduct';
+import Button from '@mui/material/Button';
 
 const NewProduct: React.FunctionComponent = observer(() => {
 	const [reset, setReset] = useState(true);
@@ -39,14 +40,16 @@ const NewProduct: React.FunctionComponent = observer(() => {
 						changeValue={(value) =>price = Number(value)} 
 						reset={reset}
 			/>
-			<button onClick={() => {							
+			<Button 
+					variant='contained'
+					onClick={() => {							
 									addProduct();
 									setReset(!reset);
 									}
 							}
 			>
 				Добавить
-			</button>
+			</Button>
 		</div>
 });
 

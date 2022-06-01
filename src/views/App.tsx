@@ -5,8 +5,8 @@ import InTotal from './InTotal';
 const App: React.FunctionComponent = () => {
 	return <div>
             <ProductList />
-			<NewProduct />
 			<InTotal />
+			<NewProduct />
         </div>;
 };
 
