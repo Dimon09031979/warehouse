@@ -1,7 +1,12 @@
 import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 import Product from './Product';
+import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
 
 const ProductList: React.FunctionComponent = observer(() => {
     const rows: JSX.Element[] = [];
@@ -9,18 +14,21 @@ const ProductList: React.FunctionComponent = observer(() => {
 		rows.push(<Product index ={i} />);
 	};
 
-    return <div>
-        <h3>Список продуктов:</h3>
-			<Table>
-				<tr>
-					<th>&#160; Наименование &#160;</th>
-					<th>&#160; Количество кг &#160;</th>
-					<th>&#160; Цена руб &#160;</th>
-					<th>&#160; Стоимость руб &#160;</th>
-				</tr>
-				{rows}
+    return <Table>
+				<TableHead>
+				  <TableRow>
+					<TableCell align="center">Наименование</TableCell>
+					<TableCell align="center">Количество кг</TableCell>
+					<TableCell align="center">Цена руб</TableCell>
+					<TableCell align="center">Стоимость руб</TableCell>
+					<TableCell></TableCell>
+					<TableCell></TableCell>
+				  </TableRow>
+				</TableHead>
+				<TableBody>
+					{rows}
+				</TableBody>
 			</Table>
-    </div>
 });
 
 export default ProductList;

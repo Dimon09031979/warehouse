@@ -2,9 +2,9 @@ import {observer} from 'mobx-react-lite';
 import products from '../models/State';
 
 const InTotal: React.FunctionComponent = observer(() => {
-	return <p>
+	return <h3 style={{background: 'white'}}>
 		Итого cтоимость: {products.sum}руб
-	</p>
+	</h3>
 });
 
 export default InTotal;

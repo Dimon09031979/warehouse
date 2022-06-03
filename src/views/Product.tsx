@@ -4,6 +4,9 @@ import products from '../models/State';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Checkbox from '@mui/material/Checkbox';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+
 
 
 const Product: React.FunctionComponent<{index: number}> = observer((props) => {
@@ -24,14 +27,14 @@ const Product: React.FunctionComponent<{index: number}> = observer((props) => {
 										onChange={() => products.list[i].changeCheck() }
    									/>;
 
-	return <tr>
-		<td>{products.list[i].data.name}</td>
-		<td style={{textAlign: 'center'}}>{products.list[i].data.number}</td>
-		<td style={{textAlign: 'center'}}>{products.list[i].data.price}</td>
-		<td style={{textAlign: 'center'}}>{products.list[i].data.sum}</td>
-		<td>{checkbox}</td>
-		<td>{buttonDel}</td>
-	</tr>
+	return <TableRow>
+		<TableCell>{products.list[i].data.name}</TableCell>
+		<TableCell align="center">{products.list[i].data.number}</TableCell>
+		<TableCell align="center">{products.list[i].data.price}</TableCell>
+		<TableCell align="center">{products.list[i].data.sum}</TableCell>
+		<TableCell>{checkbox}</TableCell>
+		<TableCell>{buttonDel}</TableCell>
+	</TableRow>
 });
 
 export default Product;

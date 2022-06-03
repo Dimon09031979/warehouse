@@ -5,6 +5,7 @@ import EnterValue from './EnterValue';
 import Product from '../models/classProduct';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 const NewProduct: React.FunctionComponent = observer(() => {
 	const [reset, setReset] = useState(true);
@@ -25,29 +26,32 @@ const NewProduct: React.FunctionComponent = observer(() => {
 	}
 
 	return <Box
+				component={Paper}
 				sx={{
-					border: '2px solid',
-					borderRadius: '15px',
+					//borderRadius: '10px',
 					padding: '20px',
-					display: 'inline-block'
+					margin: '20px',
+					display: 'inline-block',
+					background: 'white'
 				}}
 			>
 			<h3 style={{margin: '0px'}}>Добавить новый продукт:</h3>
 			<EnterValue  
-						name={'Наименование'}
+						name='Наименование'
 						changeValue={(value) => name = String(value)} 
 						reset={reset}
 			/>
 			<EnterValue  
-						name={'Количество'}
+						name='Количество'
 						changeValue={(value) => number = Number(value)} 
 						reset={reset}
 			/>
 			<EnterValue  
-						name={'Цена'}
+						name='Цена'
 						changeValue={(value) =>price = Number(value)} 
 						reset={reset}
 			/>
+			<input style={{display: 'none'}}/>
 			<Button 
 					variant='contained'
 					onClick={() => {							
