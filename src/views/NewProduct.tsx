@@ -28,10 +28,8 @@ const NewProduct: React.FunctionComponent = observer(() => {
 	return <Box
 				component={Paper}
 				sx={{
-					//borderRadius: '10px',
 					padding: '20px',
 					margin: '20px',
-					display: 'inline-block',
 					background: 'white'
 				}}
 			>

@@ -7,14 +7,16 @@ import Paper from '@mui/material/Paper';
 const App: React.FunctionComponent = () => {
 	return <Box sx={{
 					 backgroundColor: 'rgb(240, 240, 240)',
-					 width: '98vw',
 					 height: '97vh',
+					 display: 'flex',
+					 //overflow: 'auto'
 					}}>
 
 		<Box sx={{
 					padding: '20px',
-					margin: '20px', 
-					display: 'inline-block',
+					margin: '20px',
+					flex: '1',
+					overflow: 'auto'
 				}}
 			component={Paper}
 		>
