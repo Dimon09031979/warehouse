@@ -1,10 +1,14 @@
 import {observer} from 'mobx-react-lite';
-import products from '../models/classProductList';
+import productList from '../models/classProductList';
 
 const InTotal: React.FunctionComponent = observer(() => {
+
 	return <h3 style={{background: 'white'}}>
-		Итого cтоимость: {products.sum}руб
+
+		Итого cтоимость: ${productList.sum}
+		
 	</h3>
+
 });
 
 export default InTotal;

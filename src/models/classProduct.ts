@@ -14,7 +14,7 @@ class Product {
 		return this._product
 	};
 	
-	changeCheck() {
+	invertCheck() {
 		this._product.check = !this._product.check;
 	};
 }

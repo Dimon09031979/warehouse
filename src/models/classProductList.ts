@@ -2,7 +2,7 @@ import {observable, makeObservable, computed} from 'mobx';
 import type {ProductType} from './types';
 import Product from './classProduct';
 
-class ProductsClass {
+class ProductList {
 	@observable
 	list: Product[] = [];
 
@@ -33,8 +33,20 @@ class ProductsClass {
 
 		this.list = productList.map( prod => new Product(prod) );
 	}
+
+	invertCheck(i: number) {
+		this.list[i].invertCheck();
+	}
+
+	delProduct(i: number) {
+		this.list.splice(i, 1);
+	}
+
+	addProduct(newproduct: Product) {
+		this.list.push(newproduct);
+	}
 }
 
-const products = new ProductsClass();
+const productList = new ProductList();
 
-export default products;
+export default productList;

@@ -41,8 +41,8 @@ const App: React.FunctionComponent = () => {
 			<Box sx={{minWidth: '301px'}}>
 				<NewProduct />
 				<img src='wing.png' 
-					 height='250px' 
 					 style={{
+						 	height: '250px',
 						 	display: 'block', 
 					 		margin: '0 auto'
 						}} 
