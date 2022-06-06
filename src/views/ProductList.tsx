@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react-lite';
-import products from '../models/tableState';
+import products from '../models/classProductList';
 import Product from './Product';
 import Table from '@mui/material/Table';
 import TableHead from '@mui/material/TableHead';
