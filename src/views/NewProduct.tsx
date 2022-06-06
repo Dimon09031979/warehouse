@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {observer} from 'mobx-react-lite';
-import products from '../models/State';
+import products from '../models/tableState';
 import EnterValue from './EnterValue';
 import Product from '../models/classProduct';
 import Button from '@mui/material/Button';

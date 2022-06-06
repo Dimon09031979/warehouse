@@ -31,15 +31,22 @@ const App: React.FunctionComponent = () => {
 						flex: '1',
 						height: '75vh',
 						overflow: 'auto',
+						minWidth: '638px'
 					}}
 				component={Paper}
 			>
             	<ProductList />
 				<InTotal />
 			</Box>
-			<Box>
+			<Box sx={{minWidth: '301px'}}>
 				<NewProduct />
-				<img src='wing.png' height='250px' style={{display: 'block', margin: '0 auto'}} />
+				<img src='wing.png' 
+					 height='250px' 
+					 style={{
+						 	display: 'block', 
+					 		margin: '0 auto'
+						}} 
+				/>
 			</Box>
 		</Box>
     </Box>;

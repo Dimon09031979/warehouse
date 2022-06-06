@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react-lite';
-import products from '../models/State';
+import products from '../models/tableState';
 
 const InTotal: React.FunctionComponent = observer(() => {
 	return <h3 style={{background: 'white'}}>
