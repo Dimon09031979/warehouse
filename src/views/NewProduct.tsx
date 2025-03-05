@@ -46,13 +46,13 @@ const NewProduct: React.FunctionComponent = observer(() => {
 
   return (
     <Container>
-      <Title>Добавить новый продукт:</Title>
-      <EnterValue name='Наименование' uploadValue={handleEnterName} reset={reset} />
-      <EnterValue name='Количество' uploadValue={handleEnterNumber} reset={reset} />
-      <EnterValue name='Цена' uploadValue={handleEnterPrice} reset={reset} />
+      <Title>Add a new product:</Title>
+      <EnterValue name='Name' uploadValue={handleEnterName} reset={reset} />
+      <EnterValue name='Weight' uploadValue={handleEnterNumber} reset={reset} />
+      <EnterValue name='Price' uploadValue={handleEnterPrice} reset={reset} />
       <HiddenInput />
       <Button variant='contained' onClick={addProduct}>
-        Добавить
+        Add
       </Button>
     </Container>
   );

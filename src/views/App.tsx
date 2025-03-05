@@ -45,7 +45,7 @@ const WingImage = styled('img')({
 
 const App = () => (
   <AppContainer>
-    <Title>Гроссбух</Title>
+    <Title>Warehouse</Title>
     <ContentWrapper>
       <ProductSection>
         <ProductList />

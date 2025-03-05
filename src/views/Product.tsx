@@ -20,7 +20,7 @@ const Product: React.FunctionComponent<{ index: number }> = observer((props) => 
       <TableCell align='center'>{product.number}</TableCell>
       <TableCell align='center'>{product.price}</TableCell>
       <TableCell align='center'>{product.sum}</TableCell>
-      <TableCell>
+      <TableCell align='center'>
         <Checkbox checked={product.check} onChange={() => invertCheck(index)} />
       </TableCell>
       <TableCell>
@@ -31,7 +31,7 @@ const Product: React.FunctionComponent<{ index: number }> = observer((props) => 
           startIcon={<DeleteIcon />}
           onClick={() => delProduct(index)}
         >
-          Удалить
+          Delete
         </Button>
       </TableCell>
     </TableRow>

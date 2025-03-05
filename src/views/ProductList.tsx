@@ -17,11 +17,11 @@ const ProductList: React.FunctionComponent = observer(() => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell align='center'>Наименование</TableCell>
-          <TableCell align='center'>Количество кг</TableCell>
-          <TableCell align='center'>Цена, $</TableCell>
-          <TableCell align='center'>Стоимость, $</TableCell>
-          <TableCell></TableCell>
+          <TableCell align='center'>Name</TableCell>
+          <TableCell align='center'>Weight, kg</TableCell>
+          <TableCell align='center'>Price, $</TableCell>
+          <TableCell align='center'>Cost, $</TableCell>
+          <TableCell align='center'>Add to calculation</TableCell>
           <TableCell></TableCell>
         </TableRow>
       </TableHead>

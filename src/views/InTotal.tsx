@@ -3,7 +3,7 @@ import productList from '../models/classProductList';
 
 const InTotal: React.FunctionComponent = observer(() => (
   <h3 style={{ background: 'white' }}>
-    Итого стоимость: ${productList.sum}
+    Total cost: ${productList.sum}
   </h3>
 ));
 
