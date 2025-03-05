@@ -1,56 +1,62 @@
+import { styled } from '@mui/material/styles';
 import ProductList from './ProductList';
 import NewProduct from './NewProduct';
 import InTotal from './InTotal';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
-const App: React.FunctionComponent = () => (
-	<Box sx={{
-		backgroundColor: 'rgb(240, 240, 240)',
-		backgroundImage: 'url("wood.jpg")',
-		height: '100vh',
-		overflow: 'auto'
-	}}>
-		<h1 style={{
-			margin: 10,
-			paddingTop: 10,
-			textAlign: 'center',
-			fontFamily: 'cursive',
-			fontSize: '40px'
-		}}>
-			Гроссбух
-		</h1>
-		<Box sx={{
-			display: 'flex', 
-			alignItems: 'flex-start'
-		}}>
-			<Box 
-				sx={{
-					padding: '20px',
-					margin: '20px',
-					flex: '1',
-					height: '75vh',
-					overflow: 'auto',
-					minWidth: '638px'
-				}}
-				component={Paper}
-			>
-            	<ProductList />
-				<InTotal />
-			</Box>
-			<Box sx={{minWidth: '301px'}}>
-				<NewProduct />
-				<img 
-				    src='wing.png' 
-					style={{
-						height: '250px',
-						display: 'block', 
-						margin: '0 auto'
-					}} 
-				/>
-			</Box>
-		</Box>
-    </Box>
+const AppContainer = styled('div')({
+  backgroundColor: 'rgb(240, 240, 240)',
+  backgroundImage: 'url("wood.jpg")',
+  height: '100vh',
+  overflow: 'auto'
+});
+
+const Title = styled('h1')({
+  margin: 10,
+  paddingTop: 10,
+  textAlign: 'center',
+  fontFamily: 'cursive',
+  fontSize: '40px'
+});
+
+const ContentWrapper = styled('div')({
+  display: 'flex',
+  alignItems: 'flex-start'
+});
+
+const ProductSection = styled(Paper)({
+  padding: '20px',
+  margin: '20px',
+  flex: 1,
+  height: '75vh',
+  overflow: 'auto',
+  minWidth: '638px'
+});
+
+const Sidebar = styled('div')({
+  minWidth: '301px'
+});
+
+const WingImage = styled('img')({
+  height: '250px',
+  display: 'block',
+  margin: '0 auto'
+});
+
+const App = () => (
+  <AppContainer>
+    <Title>Гроссбух</Title>
+    <ContentWrapper>
+      <ProductSection>
+        <ProductList />
+        <InTotal />
+      </ProductSection>
+      <Sidebar>
+        <NewProduct />
+        <WingImage src='wing.png' />
+      </Sidebar>
+    </ContentWrapper>
+  </AppContainer>
 );
 
 export default App;
