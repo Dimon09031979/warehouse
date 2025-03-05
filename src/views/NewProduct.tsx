@@ -21,6 +21,10 @@ const HiddenInput = styled('input')({
   display: 'none'
 });
 
+const ButtonContainer = styled('div')({
+  textAlign: 'right'
+});
+
 const NewProduct: React.FunctionComponent = observer(() => {
   const [reset, setReset] = useState<boolean>(true);
 
@@ -51,9 +55,11 @@ const NewProduct: React.FunctionComponent = observer(() => {
       <EnterValue name='Weight' uploadValue={handleEnterNumber} reset={reset} />
       <EnterValue name='Price' uploadValue={handleEnterPrice} reset={reset} />
       <HiddenInput />
-      <Button variant='contained' onClick={addProduct}>
-        Add product
-      </Button>
+      <ButtonContainer>
+        <Button variant='contained' onClick={addProduct}>
+          Add
+        </Button>
+      </ButtonContainer>
     </Container>
   );
 });
