@@ -13,24 +13,23 @@ const ProductList: React.FunctionComponent = observer(() => {
 		rows.push(<Product index ={i} />);
 	};
 
-    return <Table>
-
-		<TableHead>
-			<TableRow>
-				<TableCell align="center">Наименование</TableCell>
-				<TableCell align="center">Количество кг</TableCell>
-				<TableCell align="center">Цена, $</TableCell>
-				<TableCell align="center">Стоимость, $</TableCell>
-				<TableCell></TableCell>
-				<TableCell></TableCell>
-			</TableRow>
-		</TableHead>
-
-		<TableBody>
-			{rows}
-		</TableBody>
-
-	</Table>
+    return (
+		<Table>
+			<TableHead>
+				<TableRow>
+					<TableCell align="center">Наименование</TableCell>
+					<TableCell align="center">Количество кг</TableCell>
+					<TableCell align="center">Цена, $</TableCell>
+					<TableCell align="center">Стоимость, $</TableCell>
+					<TableCell></TableCell>
+					<TableCell></TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				{rows}
+			</TableBody>
+		</Table>
+	);
 });
 
 export default ProductList;

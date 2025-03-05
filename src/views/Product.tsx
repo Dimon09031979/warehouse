@@ -14,32 +14,32 @@ const Product: React.FunctionComponent<{index: number}> = observer((props) => {
 
 	const invertCheck = (i: number) => productList.invertCheck(i);
 	const delProduct = (i: number) => productList.delProduct(i);
-	
-	const buttonDel: ReactElement = <Button 
-										size='small'
-										variant='outlined'
-										color='secondary'
-										startIcon={<DeleteIcon />}
-										onClick={() => delProduct(index)} 
-									>
-										Удалить
-								 	</Button>;
 
-	const checkbox: ReactElement = <Checkbox				
-										checked={product.check}
-										onChange={() => invertCheck(index)}
-   									/>;
-
-	return <TableRow>
-
-		<TableCell>{product.name}</TableCell>
-		<TableCell align="center">{product.number}</TableCell>
-		<TableCell align="center">{product.price}</TableCell>
-		<TableCell align="center">{product.sum}</TableCell>
-		<TableCell>{checkbox}</TableCell>
-		<TableCell>{buttonDel}</TableCell>
-		
-	</TableRow>
+	return (
+		<TableRow>
+			<TableCell>{product.name}</TableCell>
+			<TableCell align="center">{product.number}</TableCell>
+			<TableCell align="center">{product.price}</TableCell>
+			<TableCell align="center">{product.sum}</TableCell>
+			<TableCell>
+				<Checkbox				
+					checked={product.check}
+					onChange={() => invertCheck(index)}
+				/>;
+			</TableCell>
+			<TableCell>
+				<Button 
+					size='small'
+					variant='outlined'
+					color='secondary'
+					startIcon={<DeleteIcon />}
+					onClick={() => delProduct(index)} 
+				>
+					Удалить
+				</Button>;
+			</TableCell>
+		</TableRow>
+	);
 });
 
 export default Product;

@@ -30,46 +30,43 @@ const NewProduct: React.FunctionComponent = observer(() => {
 		setReset(!reset);
 	}
 
-	return <Box
-				component={Paper}
-				sx={{
-					padding: '20px',
-					margin: '20px',
-					background: 'white'
-				}}
-			>
+	return (
+		<Box
+			component={Paper}
+			sx={{
+				padding: '20px',
+				margin: '20px',
+				background: 'white'
+			}}
+		>
+			<h3 style={{margin: '0px'}}>Добавить новый продукт:</h3>
+			<EnterValue  
+				name='Наименование'
+				uploadValue={handleEnterName} 
+				reset={reset}
+			/>
+			<EnterValue  
+				name='Количество'
+				uploadValue={handleEnterNumber} 
+				reset={reset}
+			/>
+			<EnterValue  
+				name='Цена'
+				uploadValue={handleEnterPrice} 
+				reset={reset}
+			/>
 
-		<h3 style={{margin: '0px'}}>Добавить новый продукт:</h3>
-
-		<EnterValue  
-					name='Наименование'
-					uploadValue={handleEnterName} 
-					reset={reset}
-		/>
-
-		<EnterValue  
-					name='Количество'
-					uploadValue={handleEnterNumber} 
-					reset={reset}
-		/>
-
-		<EnterValue  
-					name='Цена'
-					uploadValue={handleEnterPrice} 
-					reset={reset}
-		/>
-
-		{/* c 3-мя EnterValue гугл хром выдаёт подсказку пароля */}
-		<input style={{display: 'none'}}/> 
+			{/* c 3-мя EnterValue гугл хром выдаёт подсказку пароля */}
+			<input style={{display: 'none'}}/> 
 	
-		<Button 
+			<Button 
 				variant='contained'
 				onClick={addProduct}
-		>
-			Добавить
-		</Button>
-
-	</Box>
+			>
+				Добавить
+			</Button>
+		</Box>
+	);
 });
 
 export default NewProduct;

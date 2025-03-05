@@ -4,20 +4,19 @@ import InTotal from './InTotal';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
-const App: React.FunctionComponent = () => {
-	return <Box sx={{
-					 backgroundColor: 'rgb(240, 240, 240)',
-					 backgroundImage: 'url("wood.jpg")',
-					 height: '100vh',
-					 overflow: 'auto'
-					}}>
-
+const App: React.FunctionComponent = () => (
+	<Box sx={{
+		backgroundColor: 'rgb(240, 240, 240)',
+		backgroundImage: 'url("wood.jpg")',
+		height: '100vh',
+		overflow: 'auto'
+	}}>
 		<h1 style={{
-					margin: 10,
-					paddingTop: 10,
-					textAlign: 'center',
-					fontFamily: 'cursive',
-					fontSize: '40px'
+			margin: 10,
+			paddingTop: 10,
+			textAlign: 'center',
+			fontFamily: 'cursive',
+			fontSize: '40px'
 		}}>
 			Гроссбух
 		</h1>
@@ -25,14 +24,15 @@ const App: React.FunctionComponent = () => {
 			display: 'flex', 
 			alignItems: 'flex-start'
 		}}>
-			<Box sx={{
-						padding: '20px',
-						margin: '20px',
-						flex: '1',
-						height: '75vh',
-						overflow: 'auto',
-						minWidth: '638px'
-					}}
+			<Box 
+				sx={{
+					padding: '20px',
+					margin: '20px',
+					flex: '1',
+					height: '75vh',
+					overflow: 'auto',
+					minWidth: '638px'
+				}}
 				component={Paper}
 			>
             	<ProductList />
@@ -40,16 +40,17 @@ const App: React.FunctionComponent = () => {
 			</Box>
 			<Box sx={{minWidth: '301px'}}>
 				<NewProduct />
-				<img src='wing.png' 
-					 style={{
-						 	height: '250px',
-						 	display: 'block', 
-					 		margin: '0 auto'
-						}} 
+				<img 
+				    src='wing.png' 
+					style={{
+						height: '250px',
+						display: 'block', 
+						margin: '0 auto'
+					}} 
 				/>
 			</Box>
 		</Box>
-    </Box>;
-};
+    </Box>
+);
 
 export default App;
