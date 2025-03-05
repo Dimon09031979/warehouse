@@ -28,7 +28,7 @@ class ProductList {
       const productList: ProductType[] = await fetchData();
       this.updateList(productList);
     } catch (error) {
-      console.error("Не удалось загрузить данные:", error);
+      alert("Не удалось загрузить данные:" + error);
     }
   }
 
