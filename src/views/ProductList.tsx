@@ -6,6 +6,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
+import { styled } from '@mui/material';
+
+const TableCellStyled = styled(TableCell)({
+  fontWeight: 'bold',
+  fontSize: '1em',
+});
 
 const ProductList: React.FunctionComponent = observer(() => {
   const rows: JSX.Element[] = [];
@@ -17,11 +23,11 @@ const ProductList: React.FunctionComponent = observer(() => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell align='center'>Name</TableCell>
-          <TableCell align='center'>Weight, kg</TableCell>
-          <TableCell align='center'>Price, $</TableCell>
-          <TableCell align='center'>Cost, $</TableCell>
-          <TableCell align='center'>Add to calculation</TableCell>
+          <TableCellStyled align='center'>Name</TableCellStyled>
+          <TableCellStyled align='center'>Weight, kg</TableCellStyled>
+          <TableCellStyled align='center'>Price, $</TableCellStyled>
+          <TableCellStyled align='center'>Cost, $</TableCellStyled>
+          <TableCellStyled align='center'>Add to calculation</TableCellStyled>
           <TableCell></TableCell>
         </TableRow>
       </TableHead>
