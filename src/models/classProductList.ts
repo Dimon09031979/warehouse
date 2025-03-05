@@ -26,7 +26,6 @@ class ProductList {
   async initializeList() {
     try {
       const productList: ProductType[] = await fetchData();
-      console.log(productList);
       productList.forEach((product) => {
         product.sum = product.price * product.weight;
         product.check = true;

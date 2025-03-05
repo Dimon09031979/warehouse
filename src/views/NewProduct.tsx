@@ -11,7 +11,8 @@ import { fetchData } from '../api';
 const Container = styled(Paper)({
   padding: '20px',
   margin: '20px',
-  background: 'white'
+  background: 'white',
+  maxWidth: 300,
 });
 
 const Title = styled('h3')({
