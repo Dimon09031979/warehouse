@@ -20,7 +20,11 @@ const EnterValue: React.FunctionComponent<Props> = (props) => {
 
   return (
     <p>
-      <TextField label={props.name} value={value} onChange={handleChange} />
+      <TextField
+        label={props.name}
+        value={value}
+        onChange={handleChange}
+        size="small" />
     </p>
   );
 };

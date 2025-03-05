@@ -52,7 +52,7 @@ const NewProduct: React.FunctionComponent = observer(() => {
       <EnterValue name='Price' uploadValue={handleEnterPrice} reset={reset} />
       <HiddenInput />
       <Button variant='contained' onClick={addProduct}>
-        Add
+        Add product
       </Button>
     </Container>
   );
