@@ -17,7 +17,7 @@ const Product: React.FunctionComponent<{ index: number }> = observer((props) => 
   return (
     <TableRow>
       <TableCell>{product.name}</TableCell>
-      <TableCell align='center'>{product.number}</TableCell>
+      <TableCell align='center'>{product.weight}</TableCell>
       <TableCell align='center'>{product.price}</TableCell>
       <TableCell align='center'>{product.sum}</TableCell>
       <TableCell align='center'>

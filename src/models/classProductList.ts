@@ -1,6 +1,7 @@
 import { observable, makeObservable, computed } from 'mobx';
 import type { ProductType } from './types';
 import Product from './classProduct';
+import { fetchData } from '../api';
 
 class ProductList {
   @observable
@@ -19,18 +20,21 @@ class ProductList {
 
   constructor() {
     makeObservable(this);
-    const productList: ProductType[] = [
-      { name: 'Яблоки', price: 23, number: 25 },
-      { name: 'Картошка', price: 12, number: 230 },
-      { name: 'Мясо', price: 120, number: 15 },
-      { name: 'Помидоры', price: 55, number: 12 },
-    ];
-    productList.forEach((product) => {
-      product.sum = product.price * product.number;
-      product.check = true;
-    });
+    this.initializeList();
+  }
 
-    this.list = productList.map(prod => new Product(prod));
+  async initializeList() {
+    try {
+      const productList: ProductType[] = await fetchData();
+      console.log(productList);
+      productList.forEach((product) => {
+        product.sum = product.price * product.weight;
+        product.check = true;
+      });
+      this.list = productList.map(prod => new Product(prod));
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+    }
   }
 
   invertCheck(i: number) {

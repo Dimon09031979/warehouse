@@ -6,6 +6,7 @@ import Product from '../models/classProduct';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import { fetchData } from '../api';
 
 const Container = styled(Paper)({
   padding: '20px',
@@ -39,7 +40,7 @@ const NewProduct: React.FunctionComponent = observer(() => {
   const addProduct = () => {
     const newproduct = new Product({
       name: name,
-      number: number,
+      weight: number,
       price: price,
       sum: number * price,
       check: true

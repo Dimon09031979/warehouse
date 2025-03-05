@@ -1,7 +1,7 @@
 type ProductType = {
   name: string;
   price: number;
-  number: number;
+  weight: number;
   sum?: number;
   check?: boolean;
 };
