@@ -1,6 +1,6 @@
 import { observable, makeObservable, computed, action } from 'mobx';
 import Product, { ProductType } from './classProduct';
-import { fetchData } from '../api';
+import { fetchData, uploadNewProduct } from '../api';
 
 class ProductList {
   @observable
@@ -51,8 +51,26 @@ class ProductList {
   }
 
   @action
-  addProduct(newproduct: Product) {
-    this.list.push(newproduct);
+  async addProduct(newProduct: Product): Promise<boolean> {
+    // Временное добавление в список
+    this.list.push(newProduct);
+
+    try {
+      const response = await uploadNewProduct(newProduct.data);
+      if (response.success) {
+        return true;
+      } else {
+        console.error("Ошибка загрузки продукта:", response.message);
+        // Отмена добавления продукта
+        this.list.pop();
+        return false;
+      }
+    } catch (error) {
+      console.error("Ошибка сети или сервера:", error);
+      // Отмена добавления продукта
+      this.list.pop();
+      return false;
+    }
   }
 }
 
