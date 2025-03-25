@@ -1,6 +1,5 @@
 import { observable, makeObservable, computed, action } from 'mobx';
-import type { ProductType } from './types';
-import Product from './classProduct';
+import Product, { ProductType } from './classProduct';
 import { fetchData } from '../api';
 
 class ProductList {

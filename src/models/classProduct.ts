@@ -1,5 +1,12 @@
-import type { ProductType } from './types';
 import { observable, makeObservable } from 'mobx';
+
+export type ProductType = {
+  name: string;
+  price: number;
+  weight: number;
+  sum?: number;
+  check?: boolean;
+};
 
 class Product {
   @observable

@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Checkbox from '@mui/material/Checkbox';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
-import { ProductType } from '../models/types';
+import { ProductType } from '../models/classProduct';
 
 const Product: React.FunctionComponent<{ index: number }> = observer((props) => {
   const index: number = props.index;
