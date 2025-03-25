@@ -1,6 +1,7 @@
 import { observable, makeObservable, computed, action } from 'mobx';
 import Product, { ProductType } from './classProduct';
 import { fetchData, uploadNewProduct } from '../api';
+import { toast } from 'react-toastify';
 
 class ProductList {
   @observable
@@ -51,25 +52,25 @@ class ProductList {
   }
 
   @action
-  async addProduct(newProduct: Product): Promise<boolean> {
-    // Временное добавление в список
+  async addProduct(newProduct: Product): Promise<void> {
     this.list.push(newProduct);
-
+  
     try {
       const response = await uploadNewProduct(newProduct.data);
-      if (response.success) {
-        return true;
-      } else {
-        console.error("Ошибка загрузки продукта:", response.message);
-        // Отмена добавления продукта
+  
+      if (!response.success) {
+        toast.error(response.message || "Unknown Error");
         this.list.pop();
-        return false;
+        return;
       }
     } catch (error) {
-      console.error("Ошибка сети или сервера:", error);
-      // Отмена добавления продукта
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Network Error");
+      }
+  
       this.list.pop();
-      return false;
     }
   }
 }

@@ -3,6 +3,7 @@ import ProductList from './ProductList';
 import NewProduct from './NewProduct';
 import InTotal from './InTotal';
 import Paper from '@mui/material/Paper';
+import { ToastContainer } from 'react-toastify';
 
 const AppContainer = styled('div')({
   backgroundColor: 'rgb(240, 240, 240)',
@@ -56,6 +57,7 @@ const App = () => (
         <WingImage src='wing.png' />
       </Sidebar>
     </ContentWrapper>
+    <ToastContainer />
   </AppContainer>
 );
 
