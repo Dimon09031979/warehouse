@@ -1,6 +1,6 @@
 import { observable, makeObservable, computed, action } from 'mobx';
 import Product, { ProductType } from './classProduct';
-import { downloadData, uploadNewProduct } from '../api';
+import { deleteProductById, downloadData, uploadNewProduct } from '../api';
 import { toast } from 'react-toastify';
 
 class ProductList {
@@ -47,8 +47,19 @@ class ProductList {
   }
 
   @action
-  delProduct(i: number) {
-    this.list.splice(i, 1);
+  async delProduct(i: number) {
+    const id = this.list[i].data.id;
+    if (!id) return;
+    try {
+      await deleteProductById(id);
+      this.list.splice(i, 1);
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Network Error");
+      }
+    }
   }
 
   @action

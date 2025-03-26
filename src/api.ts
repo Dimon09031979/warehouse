@@ -22,3 +22,14 @@ export const uploadNewProduct = async (newProduct: ProductType) => {
   });
   return response.data;
 };
+
+export const deleteProductById = async (id: number) => {
+  const response = await axios.delete(`${API_URL}/delete_product.php`, {
+    data: { id },
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+
+  return response.data;
+};
