@@ -63,6 +63,8 @@ class ProductList {
         this.list.pop();
         return;
       }
+
+      newProduct.data.id = response.id;
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);
