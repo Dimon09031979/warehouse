@@ -1,6 +1,7 @@
 import { observable, makeObservable } from 'mobx';
 
 export type ProductType = {
+  id?: number;
   name: string;
   price: number;
   weight: number;
