@@ -28,7 +28,7 @@ class ProductList {
       const productList: ProductType[] = await downloadData();
       this.updateList(productList);
     } catch (error) {
-      alert("Не удалось загрузить данные:" + error);
+      toast.error("Не удалось загрузить данные:" + error);
     }
   }
 
