@@ -1,6 +1,6 @@
 import { observable, makeObservable, computed, action } from 'mobx';
 import Product, { ProductType } from './classProduct';
-import { fetchData, uploadNewProduct } from '../api';
+import { downloadData, uploadNewProduct } from '../api';
 import { toast } from 'react-toastify';
 
 class ProductList {
@@ -25,7 +25,7 @@ class ProductList {
 
   async initializeList() {
     try {
-      const productList: ProductType[] = await fetchData();
+      const productList: ProductType[] = await downloadData();
       this.updateList(productList);
     } catch (error) {
       alert("Не удалось загрузить данные:" + error);
