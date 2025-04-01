@@ -35,7 +35,7 @@ class ProductList {
   @action
   updateList(productList: ProductType[]) {
     productList.forEach((product) => {
-      product.sum = product.price * product.weight;
+      product.sum = Math.round((product.price * product.weight) * 100) / 100;
       product.check = true;
     });
     this.list = productList.map(prod => new Product(prod));
