@@ -30,19 +30,19 @@ const NewProduct: React.FunctionComponent = observer(() => {
   const [reset, setReset] = useState<boolean>(true);
 
   let name: string = 'None';
-  let number: number = 0;
+  let weight: number = 0;
   let price: number = 0;
 
   const handleEnterName = (value: string) => (name = value);
-  const handleEnterNumber = (value: string) => (number = Number(value.replace(',', '.')));
+  const handleEnterNumber = (value: string) => (weight = Number(value.replace(',', '.')));
   const handleEnterPrice = (value: string) => (price = Number(value.replace(',', '.')));
 
   const addProduct = () => {
     const newproduct = new Product({
       name: name,
-      weight: number,
+      weight: weight,
       price: price,
-      sum: number * price,
+      sum: parseFloat((price * weight).toFixed(2)),
       check: true
     });
     productList.addProduct(newproduct);
