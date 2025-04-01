@@ -1,4 +1,4 @@
-import { observable, makeObservable, computed, action } from 'mobx';
+import { observable, makeObservable, computed, action, runInAction } from 'mobx';
 import Product, { ProductType } from './classProduct';
 import { deleteProductById, downloadData, uploadNewProduct } from '../api';
 import { toast } from 'react-toastify';
@@ -64,26 +64,29 @@ class ProductList {
 
   @action
   async addProduct(newProduct: Product): Promise<void> {
-    this.list.push(newProduct);
-  
+    runInAction(() => {
+      this.list.push(newProduct);
+    });
+
     try {
       const response = await uploadNewProduct(newProduct.data);
-  
+
       if (!response.success) {
         toast.error(response.message || "Unknown Error");
-        this.list.pop();
+        runInAction(() => {
+          this.list.pop();
+        });
         return;
       }
 
-      newProduct.data.id = response.id;
+      runInAction(() => {
+        newProduct.data.id = response.id;
+      });
     } catch (error) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("Network Error");
-      }
-  
-      this.list.pop();
+      toast.error(error instanceof Error ? error.message : "Network Error");
+      runInAction(() => {
+        this.list.pop();
+      });
     }
   }
 }
