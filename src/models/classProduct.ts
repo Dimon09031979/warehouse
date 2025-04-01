@@ -5,8 +5,8 @@ export type ProductType = {
   name: string;
   price: number;
   weight: number;
-  sum?: number;
-  check?: boolean;
+  sum: number;
+  check: boolean;
 };
 
 class Product {

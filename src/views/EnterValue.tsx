@@ -4,7 +4,7 @@ import { styled } from '@mui/material';
 
 type Props = {
   name: string,
-  uploadValue: (value: string | number) => void,
+  uploadValue: (value: string) => void,
   reset: boolean
 };
 

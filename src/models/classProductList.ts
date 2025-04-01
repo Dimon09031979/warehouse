@@ -12,7 +12,7 @@ class ProductList {
     let sum = 0;
     this.list.forEach(product => {
       if (product.data.check) {
-        sum += Number(product.data.sum);
+        sum += product.data.sum;
       }
     });
     return sum;
@@ -35,7 +35,7 @@ class ProductList {
   @action
   updateList(productList: ProductType[]) {
     productList.forEach((product) => {
-      product.sum = Math.round((product.price * product.weight) * 100) / 100;
+      product.sum = parseFloat((product.price * product.weight).toFixed(2));
       product.check = true;
     });
     this.list = productList.map(prod => new Product(prod));

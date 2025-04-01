@@ -33,9 +33,9 @@ const NewProduct: React.FunctionComponent = observer(() => {
   let number: number = 0;
   let price: number = 0;
 
-  const handleEnterName = (value: string | number) => (name = String(value));
-  const handleEnterNumber = (value: string | number) => (number = Number(value));
-  const handleEnterPrice = (value: string | number) => (price = Number(value));
+  const handleEnterName = (value: string) => (name = value);
+  const handleEnterNumber = (value: string) => (number = Number(value.replace(',', '.')));
+  const handleEnterPrice = (value: string) => (price = Number(value.replace(',', '.')));
 
   const addProduct = () => {
     const newproduct = new Product({
