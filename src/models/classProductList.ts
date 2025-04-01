@@ -28,7 +28,7 @@ class ProductList {
       const productList: ProductType[] = await downloadData();
       this.updateList(productList);
     } catch (error) {
-      toast.error("Не удалось загрузить данные:" + error);
+      toast.error("Failed to load data:" + error);
     }
   }
 
@@ -52,7 +52,9 @@ class ProductList {
     if (!id) return;
     try {
       await deleteProductById(id);
-      this.list.splice(i, 1);
+      runInAction(() => {
+        this.list.splice(i, 1);
+      });
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);
