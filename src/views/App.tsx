@@ -20,7 +20,7 @@ const Title = styled('h1')({
   fontSize: '40px'
 });
 
-const ContentWrapper = styled('div')({
+const ProductContent = styled('div')({
   display: 'flex',
   alignItems: 'flex-start'
 });
@@ -47,7 +47,7 @@ const WingImage = styled('img')({
 const App = () => (
   <AppContainer>
     <Title>Warehouse</Title>
-    <ContentWrapper>
+    <ProductContent>
       <ProductSection>
         <ProductList />
         <InTotal />
@@ -56,7 +56,7 @@ const App = () => (
         <NewProduct />
         <WingImage src='wing.png' />
       </Sidebar>
-    </ContentWrapper>
+    </ProductContent>
     <ToastContainer />
   </AppContainer>
 );
