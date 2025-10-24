@@ -20,10 +20,13 @@ const Title = styled('h1')({
   fontSize: '40px'
 });
 
-const ProductContent = styled('div')({
+const ProductContent = styled('div')(({ theme }) => ({
   display: 'flex',
-  alignItems: 'flex-start'
-});
+  alignItems: 'flex-start',
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'column'
+  }
+}));
 
 const ProductSection = styled(Paper)({
   padding: '20px',
@@ -31,18 +34,21 @@ const ProductSection = styled(Paper)({
   flex: 1,
   height: '75vh',
   overflow: 'auto',
-  minWidth: '638px'
+  minWidth: '600px'
 });
 
 const Sidebar = styled('div')({
   minWidth: '301px'
 });
 
-const WingImage = styled('img')({
+const WingImage = styled('img')(({ theme }) => ({
   height: '250px',
   display: 'block',
-  margin: '0 auto'
-});
+  margin: '0 auto',
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  },
+}));
 
 const App = () => (
   <AppContainer>
