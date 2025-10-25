@@ -24,7 +24,8 @@ const ProductContent = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'flex-start',
   [theme.breakpoints.down('lg')]: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'stretch',
   }
 }));
 
