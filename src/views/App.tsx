@@ -23,7 +23,7 @@ const Title = styled('h1')({
 const ProductContent = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'flex-start',
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('lg')]: {
     flexDirection: 'column'
   }
 }));
@@ -44,7 +44,7 @@ const WingImage = styled('img')(({ theme }) => ({
   height: '250px',
   display: 'block',
   margin: '0 auto',
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('lg')]: {
     display: 'none',
   },
 }));

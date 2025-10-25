@@ -18,7 +18,7 @@ const Product: React.FunctionComponent<{ index: number }> = observer((props) => 
   const delProduct = (i: number) => productList.delProduct(i);
 
   const theme = useTheme();
-  const isLgUp = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <TableRow>
@@ -30,7 +30,7 @@ const Product: React.FunctionComponent<{ index: number }> = observer((props) => 
         <Checkbox checked={product.check} onChange={() => invertCheck(index)} />
       </TableCell>
       <TableCell>
-        {isLgUp ? (
+        {isMdUp ? (
           <Button
             size='small'
             variant='outlined'
