@@ -34,11 +34,10 @@ const ProductSection = styled(Paper)({
   flex: 1,
   height: '75vh',
   overflow: 'auto',
-  minWidth: '600px'
 });
 
 const Sidebar = styled('div')({
-  minWidth: '301px'
+  minWidth: '300px'
 });
 
 const WingImage = styled('img')(({ theme }) => ({
