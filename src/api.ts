@@ -24,8 +24,10 @@ export const uploadNewProduct = async (newProduct: ProductType) => {
 };
 
 export const deleteProductById = async (id: number) => {
-  const response = await axios.delete(`${API_URL}/delete_product.php`, {
-    data: { id },
+  const response = await axios.post(`${API_URL}/delete_product.php`, {
+    id,
+    action: 'delete',
+  }, {
     headers: {
       "Content-Type": "application/json"
     }
