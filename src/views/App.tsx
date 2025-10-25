@@ -29,13 +29,18 @@ const ProductContent = styled('div')(({ theme }) => ({
   }
 }));
 
-const ProductSection = styled(Paper)({
+const ProductSection = styled(Paper)(({ theme }) => ({
   padding: '20px',
   margin: '20px',
   flex: 1,
   height: '75vh',
   overflow: 'auto',
-});
+
+  [theme.breakpoints.down('sm')]: {
+    padding: '4px',
+    margin: '4px',
+  },
+}));
 
 const Sidebar = styled('div')({
   minWidth: '300px'

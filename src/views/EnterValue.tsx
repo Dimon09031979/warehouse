@@ -8,9 +8,23 @@ type Props = {
   reset: boolean
 };
 
-const TextFieldStyled = styled(TextField)({
+const TextFieldStyled = styled(TextField)(({ theme }) => ({
   margin: '8px 0px',
-});
+
+  '& .MuiInputBase-root': {
+    fontSize: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8em',
+    },
+  },
+
+  '& .MuiInputLabel-root': {
+    fontSize: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8em',
+    },
+  },
+}));
 
 const EnterValue: React.FunctionComponent<Props> = (props) => {
   const [value, setValue] = useState<string>('');

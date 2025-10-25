@@ -7,12 +7,16 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 
-const Container = styled(Paper)({
+const Container = styled(Paper)(({ theme }) => ({
   padding: '20px',
   margin: '20px',
   background: 'white',
   maxWidth: 300,
-});
+    [theme.breakpoints.down('sm')]: {
+    padding: '4px',
+    margin: '4px',
+  },
+}));
 
 const Title = styled('h3')({
   margin: '0px'
